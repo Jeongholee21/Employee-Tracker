@@ -1,5 +1,6 @@
 const mysql = require('mysql2');
 const table = require('console.table');
+const connection = require('../db/connection');
 
 require('dotenv').config();
 
@@ -9,7 +10,7 @@ const db = mysql.createConnection({
   password: process.env.PASSWORD,
   database: 'company_db'
 });
-    
+
 const viewDep = () => {
   db.query(`SELECT * FROM department ORDER BY id`, function (err, results) {
     console.log("");
