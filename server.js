@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 
@@ -7,7 +9,7 @@ const view = require('./route/view');
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: process.env.USER,
+    user: process.env.ROOT,
     password: process.env.PASSWORD,
     database: 'company_db'
   },
