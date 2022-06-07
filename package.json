@@ -19,9 +19,8 @@
   "homepage": "https://github.com/Jeongholee21/Employee-Tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
-    "dotenv": "^16.0.1",
-    "inquirer": "^8.2.4",
-    "mysql": "^8.0.28",
-    "mysql2": "^8.0.28"
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.3"
   }
 }

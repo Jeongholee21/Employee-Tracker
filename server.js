@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 
@@ -9,11 +7,14 @@ const view = require('./route/view');
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: process.env.ROOT,
+    user: process.env.USER,
     password: process.env.PASSWORD,
     database: 'company_db'
   },
   console.log('Connected to the company_db'));
+
+
+
 
 const startQuestions = [
     {
@@ -84,6 +85,8 @@ const addEmployeeQuestions = [
     },
 ]
 
+
+
 const updateEmployeeQuestions = [
     {
         type : "list",
@@ -108,6 +111,7 @@ const makeDepChoices = () => {
       
 }
 
+
 const makeRoleChoices = () => {
     db.query(`SELECT id, title FROM role order by id`, function (err, results) {
         results.forEach(role => {
@@ -127,10 +131,12 @@ const makeManagerChoices = () => {
       
 }
 
+
 const updateEmployeeChoices = () => {
     db.query(`SELECT id, first_name FROM employee`, function (err, results) {
         results.forEach(employee => {
             updateEmployeeQuestions[0].choices.push(employee.first_name);
+            // console.log(updateEmployeeQuestions[0].choices)
         });
       })
       
@@ -140,10 +146,14 @@ const updateRoleChoices = () => {
     db.query(`SELECT id, title FROM role`, function (err, results) {
         results.forEach(role => {
             updateEmployeeQuestions[1].choices.push(role.title);
+            // console.log(updateEmployeeQuestions[1].choices)
         });
       })
       
 }
+
+
+
 
 const {choices} = startQuestions[0];
 
@@ -216,6 +226,7 @@ const addRolePrompt = () => {
             })
             .then(()=> startPrompt())
 }
+
 
 const addEmployeePrompt = () => {
     inquirer.prompt(addEmployeeQuestions)

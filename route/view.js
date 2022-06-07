@@ -4,11 +4,11 @@ const table = require('console.table');
 require('dotenv').config();
 
 const db = mysql.createConnection({
-      host: 'localhost',
-      user: process.env.USER,
-      password: process.env.PASSWORD,
-      database: 'company_db'
-    });
+  host: 'localhost',
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: 'company_db'
+});
     
 const viewDep = () => {
   db.query(`SELECT * FROM department ORDER BY id`, function (err, results) {
