@@ -17,8 +17,9 @@ The user should clone the repository from GitHub. This application requires Node
 ## Usage 
 This application will allow users to view, add, and edit employees, roles, departments, and managers. 
 
-## Demo Video
-<https://drive.google.com/file/d/1R4DKoDyL75C3Uky7gtAPN43OmumKIDMy/view>
+## Demo
+
+![DEMO](https://github.com/Jeongholee21/Employee-Tracker/blob/main/route/tracker.gif)
 
 ## License 
 This project is license under MIT
