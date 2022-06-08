@@ -1,8 +1,14 @@
 const mysql = require('mysql2');
-const connection = require('../db/connection');
+
 require('dotenv').config();
 
 
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'company_db'
+    });
 
 
 const addDep = (department) => {

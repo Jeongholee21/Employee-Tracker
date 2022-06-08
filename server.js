@@ -4,15 +4,18 @@ const mysql = require('mysql2');
 const add = require('./route/add');
 const update = require('./route/update');
 const view = require('./route/view');
-const connection = require('./db/connection')
 
-// const db = mysql.createConnection({
-//     host: 'localhost',
-//     user: process.env.USER,
-//     password: process.env.PASSWORD,
-//     database: 'company_db'
-//   },
-//   console.log('Connected to the company_db'));
+
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'company_db'
+  },
+  console.log('Connected to the company_db'));
+
+
+
 
 const startQuestions = [
     {
