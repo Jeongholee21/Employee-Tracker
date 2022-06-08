@@ -10,9 +10,9 @@ const db = mysql.createConnection({
     database: 'company_db'
     });
 
-const updateEmployee = (role, employee) => {
-    db.query(`UPDATE employee SET role_id = ? WHERE first_name = ?`, [role, employee])
-} 
+    const updateEmployee = (role, employee) => {
+        db.query(`UPDATE employee SET role_id = ? WHERE first_name = ?`, [role, employee])
+    } 
 
 
 

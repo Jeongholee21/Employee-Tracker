@@ -1,10 +1,7 @@
 const mysql = require('mysql2');
 const table = require('console.table');
 
-
-
 require('dotenv').config();
-
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -12,8 +9,6 @@ const db = mysql.createConnection({
     password: 'password',
     database: 'company_db'
     });
-
-
 
 const viewDep = () => {
   db.query(`SELECT * FROM department ORDER BY id`, function (err, results) {
@@ -47,6 +42,5 @@ const viewEmployees = () => {
     console.table(results);
   })
 }
-
 
 module.exports = {viewDep, viewRole, viewEmployees};
